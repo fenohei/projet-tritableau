@@ -8,10 +8,10 @@ function fusion(a,b){
 	}else return [...[b[0]],...fusion(a, b.slice(1))];
 }
 
-function triFusion(t){
+function trierFusion(t){
 	if (t.length <= 1)
 		return t;
-	return fusion(triFusion(t.slice(0,t.length/2)), triFusion(t.slice(t.length/2, t.length+1)));
+	return fusion(trierFusion(t.slice(0,t.length/2)), trierFusion(t.slice(t.length/2, t.length+1)));
 }
 
-module.exports = { fusion,triFusion };
+module.exports = { fusion,trierFusion };
